@@ -20,7 +20,7 @@ p {
 .main_container {
     box-sizing: content-box;
     display: grid;
-    grid: 1fr 5fr / 1fr 4fr;
+    grid: auto 3fr / 1fr 4fr;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
     font-size: 1.2em;
@@ -116,11 +116,11 @@ p {
 .searchbox > input {
     border: none;
     border-radius: 50px;
-    height: 3em;
+    height: 2em;
     padding-left: 50px;
     width: 700px;
     font-family: inherit;
-    font-size: .7em;
+    font-size: 1em;
     font-weight: 300;
     letter-spacing: inherit;
 }
@@ -186,7 +186,7 @@ button {
     font-weight: inherit;
     background-color: var(--color3);
     border: none;
-    padding: .5em 1.2em;
+    padding: .5em 1.5em;
     border-radius: 50px;
 }
 
@@ -201,40 +201,48 @@ button:hover {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     display: grid;
-    grid: 1fr 1fr / 3fr 1fr;
+    grid: 1fr / 3fr 1fr;
     gap: 1em;
     padding: 2em;
 }
 
 /* Sub-sections */
 
-.section_container.project_container{
+.project_container{
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
 }
 
-.section_container.anouncement_container {
-    grid-column: 2 / 3;
+.right_bar {
+    display: grid;
+    grid: 1fr 1fr / 1fr;
+    gap: 1em;
+}
+
+.anouncement_container {
     grid-row: 1 / 2;
 }
 
-.section_container.trending_container {
-    grid-column: 2 / 3;
+.trending_container {
     grid-row: 2 / 3;
 }
+
+/* Projects */
 
 .projects {
     grid-row: 1 / 3;
     display: grid;
-    grid: 1fr / repeat(auto-fit, minmax(300px, 1fr));
+    grid: auto auto 1fr / repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: 1fr;
     gap: 1em;
 }
 
 .sub_container {
-    background-color: var(--color2, blue);
+    background-color: var(--color2);
     border-radius: 1em;
     padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 h3 {
@@ -244,4 +252,61 @@ h3 {
 
 .title {
     font-weight: 500;
+}
+
+.icon_group {
+    display: flex;
+    gap: 1em;
+    align-self: end;
+}
+.icon_group > img {
+    height: 1.5em;
+}
+
+/* Announcements */ 
+
+.announce_container {
+    font-size: .7em;
+    line-height: normal;
+}
+
+.line {
+    height: 1px;
+    background-color: #F7ECDE;
+    margin: 1em 0;
+}
+
+/* Trending */
+
+.trending {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.trending .user {
+    display: grid;
+    grid: 1fr 1fr/ 40px 1fr;
+    row-gap: 0px;
+    column-gap: 1em;
+    align-items: center;
+}
+
+.trending .avatar {
+    height: 40px;
+}
+
+.user img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.user div {
+    font-size: .7em;
+    line-height: normal;
+}
+
+.user div:last-child {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
 }
