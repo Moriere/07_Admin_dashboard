@@ -18,7 +18,7 @@ p {
 }
 
 .main_container {
-    box-sizing: content-box;
+    box-sizing: border-box;
     display: grid;
     grid: auto 3fr / 1fr 4fr;
     font-family: 'Raleway', sans-serif;
